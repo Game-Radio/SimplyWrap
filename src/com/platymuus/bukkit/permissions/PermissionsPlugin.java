@@ -8,10 +8,15 @@ import net.crystalyx.bukkit.simplyperms.SimplyPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * Main class for PermissionsBukkit.
+ */
 public class PermissionsPlugin extends JavaPlugin {
 
 	protected SimplyAPI api;
 
+	// -- Basic stuff
+	@Override
 	public void onEnable() {
 		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
 	}
