@@ -10,10 +10,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PermissionsPlugin extends JavaPlugin {
 
-	protected SimplyAPI plugin;
+	protected SimplyAPI api;
 
 	public void onEnable() {
-		plugin = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
+		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
 	}
 
 	// -- External API
@@ -25,7 +25,7 @@ public class PermissionsPlugin extends JavaPlugin {
 	 * @return A Group if it exists or null otherwise.
 	 */
 	public Group getGroup(String groupName) {
-		if (plugin.getAllGroups().contains(groupName)) {
+		if (api.getAllGroups().contains(groupName)) {
 			return new Group(this, groupName);
 		}
 		return null;
@@ -40,12 +40,12 @@ public class PermissionsPlugin extends JavaPlugin {
 	 */
 	public List<Group> getGroups(String playerName) {
 		ArrayList<Group> result = new ArrayList<Group>();
-		if (plugin.isPlayerInDB(playerName)) {
-			for (String key : plugin.getPlayerGroups(playerName)) {
+		if (api.isPlayerInDB(playerName)) {
+			for (String key : api.getPlayerGroups(playerName)) {
 				result.add(new Group(this, key));
 			}
 		} else {
-			result.add(new Group(this, plugin.getDefaultGroup()));
+			result.add(new Group(this, api.getDefaultGroup()));
 		}
 		return result;
 	}
@@ -57,7 +57,7 @@ public class PermissionsPlugin extends JavaPlugin {
 	 */
 	public List<Group> getAllGroups() {
 		ArrayList<Group> result = new ArrayList<Group>();
-		for (String key : plugin.getAllGroups()) {
+		for (String key : api.getAllGroups()) {
 			result.add(new Group(this, key));
 		}
 		return result;

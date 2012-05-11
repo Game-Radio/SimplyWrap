@@ -20,7 +20,7 @@ public class Group {
     }
 
     public List<String> getPlayers() {
-    	return plugin.plugin.getAllPlayers();
+    	return plugin.api.getAllPlayers();
     }
 
     public List<Player> getOnlinePlayers() {
