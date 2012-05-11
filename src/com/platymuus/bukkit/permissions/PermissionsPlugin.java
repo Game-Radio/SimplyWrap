@@ -20,7 +20,7 @@ public class PermissionsPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
-		
+
 		// How are you gentlemen
 		getLogger().info("SimplyWrapper successfully enabled !");
 	}
