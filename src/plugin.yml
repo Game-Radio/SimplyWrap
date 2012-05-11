@@ -3,5 +3,6 @@ name: PermissionsBukkit
 main: com.platymuus.bukkit.permissions.PermissionsPlugin
 author: Xefir Destiny
 website: http://dev.bukkit.org/server-mods/simplyperms/
+description: Wrapper for SimplyPerms to keep compatibility with old PermissionsBukkit based plugins
 version: 1.0
 depend: [ SimplyPerms ]
