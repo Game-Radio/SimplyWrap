@@ -6,6 +6,7 @@ import java.util.List;
 import net.crystalyx.bukkit.simplyperms.SimplyAPI;
 import net.crystalyx.bukkit.simplyperms.SimplyPlugin;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -19,6 +20,19 @@ public class PermissionsPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
+		
+		// How are you gentlemen
+		getLogger().info("SimplyWrapper successfully enabled !");
+	}
+
+	@Override
+	public void onDisable() {
+		// Good day to you! I said good day!
+		getLogger().info("SimplyWrapper successfully disabled !");
+	}
+
+	public FileConfiguration getConfig() {
+		return getServer().getPluginManager().getPlugin("SimplyPerms").getConfig();
 	}
 
 	// -- External API
