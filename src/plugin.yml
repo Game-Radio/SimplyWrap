@@ -1,0 +1,7 @@
+# basic info
+name: PermissionsBukkit
+main: com.platymuus.bukkit.permissions.PermissionsPlugin
+author: Xefir Destiny
+website: http://dev.bukkit.org/server-mods/simplyperms/
+version: 1.0
+depend: [ SimplyPerms ]
