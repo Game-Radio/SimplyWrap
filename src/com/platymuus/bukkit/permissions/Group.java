@@ -6,8 +6,8 @@ import java.util.List;
 import org.bukkit.entity.Player;
 
 /**
-* A class representing a permissions group.
-*/
+ * A class representing a permissions group.
+ */
 public class Group {
 
 	private PermissionsPlugin plugin;

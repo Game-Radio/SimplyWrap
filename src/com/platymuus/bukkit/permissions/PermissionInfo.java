@@ -84,8 +84,7 @@ public class PermissionInfo {
 	 * Gets a map of world-specific permission nodes to boolean values that this
 	 * group/player defines.
 	 * 
-	 * @param world
-	 *			The name of the world.
+	 * @param world The name of the world.
 	 * @return The map of permissions.
 	 */
 	public Map<String, Boolean> getWorldPermissions(String world) {
