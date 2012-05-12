@@ -1,6 +1,11 @@
 package com.platymuus.bukkit.permissions;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * A class representing the global and world nodes attached to a player or
@@ -55,7 +60,7 @@ public class PermissionInfo {
 		} else if (node.startsWith("groups")) {
 			return plugin.api.getGroupPermissions(node.replace("groups/", ""));
 		} else {
-			return null;
+			return new HashMap<String, Boolean>();
 		}
 	}
 
@@ -89,7 +94,7 @@ public class PermissionInfo {
 		} else if (node.startsWith("groups")) {
 			return plugin.api.getGroupPermissions(node.replace("groups/", ""), world);
 		} else {
-			return null;
+			return new HashMap<String, Boolean>();
 		}
 	}
 
