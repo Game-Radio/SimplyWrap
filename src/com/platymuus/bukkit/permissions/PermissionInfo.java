@@ -85,7 +85,7 @@ public class PermissionInfo {
 	 * group/player defines.
 	 * 
 	 * @param world
-	 *            The name of the world.
+	 *			The name of the world.
 	 * @return The map of permissions.
 	 */
 	public Map<String, Boolean> getWorldPermissions(String world) {
