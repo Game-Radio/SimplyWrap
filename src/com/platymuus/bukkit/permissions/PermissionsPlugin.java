@@ -19,7 +19,8 @@ public class PermissionsPlugin extends JavaPlugin {
 	// -- Basic stuff
 	@Override
 	public void onEnable() {
-		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin("SimplyPerms")).getAPI();
+		api = ((SimplyPlugin) getServer().getPluginManager().getPlugin(
+				"SimplyPerms")).getAPI();
 
 		// How are you gentlemen
 		getLogger().info("SimplyWrapper successfully enabled !");
@@ -32,7 +33,8 @@ public class PermissionsPlugin extends JavaPlugin {
 	}
 
 	public FileConfiguration getConfig() {
-		return getServer().getPluginManager().getPlugin("SimplyPerms").getConfig();
+		return getServer().getPluginManager().getPlugin("SimplyPerms")
+				.getConfig();
 	}
 
 	// -- External API
@@ -40,7 +42,7 @@ public class PermissionsPlugin extends JavaPlugin {
 	 * Get the group with the given name.
 	 * 
 	 * @param groupName
-	 *			The name of the group.
+	 *            The name of the group.
 	 * @return A Group if it exists or null otherwise.
 	 */
 	public Group getGroup(String groupName) {
@@ -54,7 +56,7 @@ public class PermissionsPlugin extends JavaPlugin {
 	 * Returns a list of groups a player is in.
 	 * 
 	 * @param playerName
-	 *			The name of the player.
+	 *            The name of the player.
 	 * @return The groups this player is in. May be empty.
 	 */
 	public List<Group> getGroups(String playerName) {
@@ -67,6 +69,21 @@ public class PermissionsPlugin extends JavaPlugin {
 			result.add(new Group(this, api.getDefaultGroup()));
 		}
 		return result;
+	}
+
+	/**
+	 * Returns permission info on the given player.
+	 * 
+	 * @param playerName
+	 *            The name of the player.
+	 * @return A PermissionsInfo about this player.
+	 */
+	public PermissionInfo getPlayerInfo(String playerName) {
+		if (!api.isPlayerInDB(playerName)) {
+			return null;
+		} else {
+			return new PermissionInfo(this, "users/" + playerName);
+		}
 	}
 
 	/**
